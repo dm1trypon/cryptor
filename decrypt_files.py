@@ -44,7 +44,7 @@ def list_files_path(path_folder):
             
     return list_files
 
-def crypto_operation(type, arg_parse, arg_password, clean_mode):
+def type_search_files(type, arg_parse, arg_password, clean_mode):
     if (type == PATH):
         for file in list_files_path(arg_parse):
             decrypto_file(file, arg_password, clean_mode)
@@ -62,10 +62,10 @@ def args_parser(args):
         print("Args is empty, try --help.")
 
     if args.p:
-        crypto_operation(PATH, args.p, args.pw, clean_mode)
+        type_search_files(PATH, args.p, args.pw, clean_mode)
 
     if args.f:
-        crypto_operation(FILE, args.f, args.pw, clean_mode)
+        type_search_files(FILE, args.f, args.pw, clean_mode)
 
 
 if __name__ == "__main__":
