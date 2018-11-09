@@ -26,6 +26,9 @@ def decrypto_file(file_name, arg_password, clean_mode, mask):
             fobj.read(x) for x in (private_key.size_in_bytes(), 16, 16, -1)
         ]
         fobj.close()
+        if not mask:
+            mask = MASK
+            
         if clean_mode == 1:
             if file_name[-(len(mask) + 1):] == mask:
                 os.remove(file_name)
