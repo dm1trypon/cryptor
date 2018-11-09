@@ -83,8 +83,8 @@ def args_parser(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='This is app for crypt files.')
-    parser.add_argument('-p', type_arg=str, help='Path to folder with files.')
-    parser.add_argument('-f', type_arg=str, help='Path to file.')
-    parser.add_argument('-m', type_arg=str, help='Mask for encryption file.')
+    parser.add_argument('-p', type=str, help='Path to folder with files.')
+    parser.add_argument('-f', type=str, help='Path to file.')
+    parser.add_argument('-m', type=str, help='Mask for encryption file.')
     parser.add_argument('--hack', action='store_true', help='Activate Hack mode :DDD (Source files will be deleted!)')
     args_parser(parser.parse_args())
